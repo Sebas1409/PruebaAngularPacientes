@@ -1,0 +1,35 @@
+
+
+<!-- <pre>
+  {{listadoPacientes | json}}
+</pre> -->
+
+<div class="wrapper">
+  <h1>Listado de Pacientes</h1>
+
+  <div class="validacion-data" *ngIf="listadoPacientes.length==0" >
+    Aún no hay data
+  </div>
+
+  <table *ngIf="listadoPacientes.length>0">
+    <thead>
+      <tr>
+        <th>Nombres</th>
+        <th>Apellidos</th>
+        <th>Edad</th>
+        <th>Sexo</th>
+        <th>Teléfono</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let listP of listadoPacientes">
+        <td>{{listP.nombres}} </td>
+        <td>{{listP.apellidos}} </td>
+        <td> {{listP.edad}} </td>
+        <td> {{listP.sexo}} </td>
+        <td> {{listP.telefono}} </td>
+      </tr>
+    </tbody>
+
+  </table>
+</div>
